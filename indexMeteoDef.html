@@ -1,0 +1,68 @@
+
+<html lang="it" class="js-loading">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meteo | webApp</title>
+
+    <!--Icon-->
+    <link rel="image" href="./immaginiMeteo/logoMeteo.png">
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+
+    <!--Style-->
+    <link rel="stylesheet" href="./styleMeteo.css">
+
+    <!--JavaScript-->
+    <script src="suggestionsMeteo.js"></script>
+</head>
+
+<body>
+    <!--Creazione container-->
+    <div class="container">
+
+        <!--Pannello di intestaizone-->
+        <header class="panel">
+            <h1>METEO</h1>
+            <img src="./immaginiMeteo/logoMeteo.png" alt="logo app" class="style-img">
+        </header>
+
+        <!--Contenuto principale (questa volta dovrò creare due pannelli,uno per immagine meteo e nome città e il secondo per il consiglio che vogliamo dare)-->
+        <main>
+
+            <!--Barra di ricerca città-->
+            <div class="search-container panel ">
+                <input type="text" id="cityInput" class="search-input" autocomplete="off" >
+                <label for="cityInput" class="search-label">Città</label>
+              </div>
+        
+
+            <!--Pannelo info meteo-->
+            <div class="weather-info panel">
+                <!--metto sia la classe sua specifica che è weather-info che quella generica dei pannelli ovvero panel-->
+                <div class="weather-location">Calcolo...</div>
+                <img src="" alt="" class="weather-icon">
+                <div class="weather-temperature"></div>
+            </div>
+
+            <!--Pannello suggerimenti-->
+            <div class="suggestion panel"></div>
+
+        </main>
+
+    </div>
+
+    <!--Javascript (oppure qui)-->
+    <!--  <script src="suggestionMETEO.js"></script> è molto IMPORTANTE che questo stia sopra-->
+    <script src="./scriptMeteo.js"></script>
+</body>
+
+</html>

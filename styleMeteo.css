@@ -1,0 +1,157 @@
+/*NOTE:
+- se non sono sicuro delle dimensioni visualizzate nell'app, per esempio, posso aprire lo strumento sviluppatori nel browser e provare a modificare direttamente nella pagina in tempo reale
+- le immagini possono essere trattate come testo per quanto riguarda l'allineamento
+- mettere i section o i div cambia poco a livello funzionale, si decide di metterne uno piuttosto che un'altro più per un fatto di ordine mentale
+*/
+
+/*
+PALETTE:
+- #F6B91B logo
+- 234, 252, 255
+- 102, 237, 235
+*/
+
+/*CSS RESET serve a resettare le impostazioni di default*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Utilities */
+.container {
+    margin: 0 auto;
+    max-width: 540px;
+}
+
+.panel {
+    margin: 16px;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: rgba(176, 245, 245, 0.743);
+}
+
+/* Generiche  */
+body {
+    padding: 16px;
+    font-family: Quicksand;
+    background-color: rgb(234, 252, 255);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+/*per far si che tutti li elementi siano centrati, invece di prenderli uno ad uno, trovo il tag che raggruppa tutti e vado a lavorare su quello (main in questo caso)*/
+main {
+    text-align: center;
+}
+
+.style-img{
+	border-radius: 10%;
+}
+
+/*Selezione città*/
+.search-container {
+	position: relative;
+  }
+  
+  .search-input {
+	max-width: 300px;
+	width: auto; /* Imposta la larghezza desiderata */
+	text-transform: uppercase; /*Testo in input maiuscolo di default*/
+	font-weight: bold;
+	font-family: Quicksand;
+	text-align: center;
+	padding: 8px; /* Imposta il padding desiderato */
+	font-size: 40px; /* Imposta la dimensione del carattere desiderata */
+	border: none; /* Aggiungi un bordo per la casella di testo */
+	background-color: transparent;
+	transition: padding 0.3s, font-size 0.3s; /* Aggiungi una transizione per una transizione più fluida */
+  }
+  
+  .search-input:focus {
+	padding: 20px 8px; /* Modifica il padding quando la casella di testo è in focus */
+	font-size: 30px; /* Modifica la dimensione del carattere quando la casella di testo è in focus */
+	outline: none;
+}
+  
+  .search-label {
+	opacity: 1;
+	transition: opacity 0.5s ease, left 0.8s ease, font-size 0.8s ease;/*Unito transizione fluida, cambiamento grandezza font e sparizione fluida*/
+	font-size: 40px;
+	position: absolute;
+	top: 50%;
+	left: 50%; /* Posiziona l'etichetta al centro */
+	transform: translate(-50%, -50%);
+	pointer-events: none; /* Assicura che l'etichetta non interferisca con l'input */
+}
+
+.search-input:focus + .search-label {
+	left: 25%; /* Sposta l'etichetta quando la casella di testo è in focus */
+	font-size: 25px; /* Modifica la dimensione del carattere quando la casella di testo è in focus */
+}
+
+.search-label.active {
+	left: 25%; /* Imposta la posizione desiderata quando l'etichetta è attiva */
+	font-size: 25px;
+	opacity: 0;
+}
+
+/* Informazioni meteo */
+.weather-info {
+    min-width: 450px;
+
+}
+
+.weather-icon {
+    max-width: 90%;
+    transition: opacity 0.5s, translate 1s;
+    /*opacity: 1;     va da 0 a 1 serve per far "apparire" lievemente un'immagine, farla apparire*/
+}
+
+img {
+    max-width: 90%;
+    /*usando le immagini ci si rifeisce sempre al tag genitore, quindi l'immagine sa che deve stare al 90% del pannello genitore, flexbox lo usiamo solo quando dobbiamo spostare tanti pannelli e div */
+}
+
+.weather-location {
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.weather-temperature {
+    font-size: 120px;
+    font-weight: 500;
+
+}
+
+.suggestion {
+    font-size: 24px;
+    font-weight: 700;
+    transition: scale 1s;
+
+}
+
+/*Effetti dopo il loader*/
+
+.js-loading {
+
+    /*questo lo inserisco nella parte del primo html tag*/
+    .weather-icon {
+        opacity: 0;
+        translate: 0 30px;
+    }
+
+    .suggestion {
+        scale: 0;
+    }
+}
